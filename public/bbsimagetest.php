@@ -75,3 +75,19 @@ $select_sth->execute();
     </dd>
   </dl>
 <?php endforeach ?>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const imageInput = document.getElementById("imageInput");
+    imageInput.addEventListener("change", () => {
+        if (imageInput.files.length < 1) {
+		    
+		     return;
+		           }
+		               if (imageInput.files[0].size > 5 * 1024 * 1024) {
+	                  
+		                           alert("5MB以下のファイルを選択してください。");
+		                         imageInput.value = "";
+			       }
+                           }); 
+}); 
+</script>
