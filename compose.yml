@@ -21,7 +21,7 @@ services:
     container_name: mysql
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: techc
+      MYSQL_DATABASE: linh
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
       TZ: Asia/Tokyo
     volumes:
