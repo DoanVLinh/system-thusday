@@ -82,18 +82,41 @@ background-color : gray;
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const imageInput = document.getElementById("imageInput");
-  imageInput.addEventListener("change", () => {
-    if (imageInput.files.length < 1) {
-      // 未選択の場合
-      return;
-    }
-    if (imageInput.files[0].size > 5 * 1024 * 1024) {
-      // ファイルが5MBより多い場合
-      alert("5MB以下のファイルを選択してください。");
-      imageInput.value = "";
-    }
-  });
-});
-</script> 
+ const imageInput = document.getElementById("imageInput");
+ const previewImage = document.getElementById("previewImage");
 
+ imageInput.addEventListener("change", (event) => {
+   const selectedFile = event.target.files[0];
+   if (selectedFile) {
+     if (selectedFile.size > 5 * 1024 * 1024) {
+       alert("Please select an image under 5MB.");
+       imageInput.value = "";
+       return;
+     }
+
+     const reader = new FileReader();
+     reader.onload = (event) => {
+       const img = new Image();
+       img.src = event.target.result;
+
+       img.onload = () => {
+         const maxWidth = 800; // Maximum width for resized image
+         const scaleFactor = Math.min(maxWidth / img.width, 1);
+
+         const canvas = document.createElement("canvas");
+         const ctx = canvas.getContext("2d");
+         canvas.width = img.width * scaleFactor;
+         canvas.height = img.height * scaleFactor;
+
+         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+         const resizedDataUrl = canvas.toDataURL(selectedFile.type);
+         previewImage.src = resizedDataUrl;
+       };
+     };
+
+     reader.readAsDataURL(selectedFile);
+   }
+ });
+});
+</script>
