@@ -1,39 +1,39 @@
-# Systems
-Thusday[systems]
-## Getting Started
+# システム
+木曜日「システム」
+## はじめる
 
-###  How to start
-Create nginx file
-First create directory nginx
+### 始め方
+nginxファイルを作成する
+まずディレクトリnginxを作成します
 ``` sh
 mkdir nginx/conf.d
 ```
-Create configuration file
+設定ファイルを作成する
 ``` sh
 vim nginx/conf.d/default.conf
 ```
-Create compose.yml
+compose.ymlを作成する
 ``` sh
 vim compose.yml
 ```
-Create public directory
+パブリックディレクトリを作成する
 ``` sh
 mkdir public
 ```
-Create PHP file 
+PHPファイルを作成する
 ``` sh
 vim public/shukudai.php
 ```
-Project root of repository, following command
+起動
 ``` sh
 docker compose up
 ```
-### Create Table 
-Connecting to the MySQL server in the Docker container
+### テーブルの作成
+Dockerコンテナ内のMySQLサーバーへの接続
 ``` sh
 docker compose exec mysql mysql linh
 ```
-MySQL client,execute the following SQL to create a table
+MySQLクライアントで以下のSQLを実行してテーブルを作成します
 ``` sh
  CREATE TABLE 'book' (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -42,8 +42,8 @@ MySQL client,execute the following SQL to create a table
 );
 ALTER TABLE `book` ADD COLUMN image_filename TEXT DEFAULT NULL;
 ```
-### Access from browser
-You can access the bulletin board from your browser with the following URL.
+### ブラウザからアクセス
+以下のURLからブラウザから掲示板にアクセスできます。
 ``` sh
 http://ec2-44-204-75-62.compute-1.amazonaws.com/shukudai.php
 ``` 
