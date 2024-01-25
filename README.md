@@ -48,7 +48,8 @@ MySQLクライアントで以下のSQLを実行してテーブルを作成しま
 以下のURLからブラウザから掲示板にアクセスできます。
 ``` sh
 http://ec2-54-197-22-138.compute-1.amazonaws.com/login.php
-``` 
+```
+無限スクロールとCSS
 
 
 
