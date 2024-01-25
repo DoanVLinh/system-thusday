@@ -22,7 +22,8 @@ mkdir public
 ```
 PHPファイルを作成する
 ``` sh
-vim public/shukudai.php
+vim public/login.php
+vim public/timline.php
 ```
 起動
 ``` sh
@@ -35,17 +36,18 @@ docker compose exec mysql mysql linh
 ```
 MySQLクライアントで以下のSQLを実行してテーブルを作成します
 ``` sh
- CREATE TABLE 'book' (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `tilte` TEXT NOT NULL,
+ CREATE TABLE `users` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` TEXT NOT NULL,
+    `email` TEXT NOT NULL,
+    `password` TEXT NOT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-ALTER TABLE `book` ADD COLUMN image_filename TEXT DEFAULT NULL;
 ```
 ### ブラウザからアクセス
 以下のURLからブラウザから掲示板にアクセスできます。
 ``` sh
-http://ec2-44-204-75-62.compute-1.amazonaws.com/shukudai.php
+http://ec2-54-197-22-138.compute-1.amazonaws.com/login.php
 ``` 
 
 
