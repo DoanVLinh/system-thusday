@@ -20,7 +20,7 @@ if (!empty($_POST['name']) && !empty($_POST['email'])&& !empty($_POST['password'
 <html>
 <style>
 body{
-  background:#020638;
+  background:#3c69f8;
   font-family:Helvetica;
 }
 h1{
@@ -71,6 +71,9 @@ button {
 .singin { 
  background-color:#ccc;
 text-align: center;
+}
+button:hover {
+  background:#3c69f8;
 }
 
 </style>
