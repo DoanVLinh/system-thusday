@@ -104,7 +104,7 @@ button:hover {
 おきましょう -->
     <textarea name="body" required rows="10" cols="60"></textarea>
     <div style="margin: 1em 0">
-      <input type="file" accept="image/*" name="image" id="imageInput" multiple>
+      <input type="file" accept="image/*" name="image" id="imageInput" multiple="true">
     </div>
     <input id="imageBase64Input" type="hidden" name="image_base64"><!-- base64を送る用のinput (非表示) -->
     <canvas id="imageCanvas" style="display: none;"></canvas><!-- 画像縮小に使うcanvas (非表示) -->
