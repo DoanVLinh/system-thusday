@@ -78,6 +78,18 @@ dt {
  font-family:bold;
 
 }
+button {
+  width: 100%;
+  padding: 14px 20px;
+  background-color:#42bff5;
+  margin: 8px 0;
+  cursor: pointer;
+  color:#fff;
+  font-weight: bold;
+}
+button:hover {
+  background:#3c69f8;
+}
 </style>
 <body>
 <div>
@@ -92,7 +104,7 @@ dt {
 おきましょう -->
     <textarea name="body" required rows="10" cols="60"></textarea>
     <div style="margin: 1em 0">
-      <input type="file" accept="image/*" name="imag[]e" id="imageInput" multiple>
+      <input type="file" accept="image/*" name="image" id="imageInput" multiple>
     </div>
     <input id="imageBase64Input" type="hidden" name="image_base64"><!-- base64を送る用のinput (非表示) -->
     <canvas id="imageCanvas" style="display: none;"></canvas><!-- 画像縮小に使うcanvas (非表示) -->
