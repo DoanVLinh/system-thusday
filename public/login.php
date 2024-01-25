@@ -81,6 +81,9 @@ button {
 a {
 color:#fff;
 }
+button:hover {
+  background:#3c69f8;
+}
 </style>
 <body>
 <div class="login">
